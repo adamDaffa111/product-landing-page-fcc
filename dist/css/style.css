@@ -42,20 +42,17 @@ body {
   background: rgb(9,42,51);
 }
 
-#header,#reason,#about,#portfolio,#timeline,#faq,#contact{
+#reason,#about,#portfolio,#timeline,#contact{
   padding: 5rem 1.3rem;
 }
 
 
-#header > div,
+
 #navbar > div,
 #reason > div,
 #about > div,
-#portfolio > div,
 #timeline > div,
-#faq > div,
-#contact > div,
-#footer > div{
+#contact > div{
   width: 80%;
   margin: 0 auto;
 }
@@ -65,7 +62,7 @@ body {
   width: 50px;
 }
 #navbar {
- background: rgb(6,29,35);
+ background: #fff;
 }
 #navbar > div {
   display: flex;
@@ -114,7 +111,8 @@ body {
   height: 3px;
   width: 100%;
   border-radius: 10px;
-  background: var(--paraghraph-color);
+  background: rgb(6,29,35);
+  
 }
 
 
@@ -122,8 +120,24 @@ body {
 #header {
   background: rgb(6,29,35);
   clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 100%);
+  position: relative;
 }
-
+#header:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/bg1.jpg) no-repeat;
+  background-size: cover;
+  z-index: -8;
+}
+#header > div {
+  background: linear-gradient(rgba(6,29,35,.7),rgb(6,29,35));
+  padding: 5rem 1.3rem;
+}
 #header #showcase img {
   width: 250px;
   margin: auto;
@@ -141,15 +155,14 @@ body {
 }
 #showcase button {
   background: none;
-  color: var(--paraghraph-color);
-  border: 2px solid #15dcf6;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  color: rgb(6,29,35);
+  border: none;
+  background: var(--paraghraph-color);
 }
 .cta-btn,.submit-btn {
   padding: 1rem 1.5rem ;
   border: none;
+  font-weight: 600;
   color: #000;
   background: var(--paraghraph-color);
   text-transform: uppercase;
@@ -187,7 +200,7 @@ body {
 .boxes .box {
   text-align: center;
   padding: 1.3rem;
-  border: 1px solid #15dcf6;
+  background: rgba(255,255,255,.05);
 }
 .boxes .box:nth-child(even) {
   transform: translatey(25px);
@@ -235,7 +248,7 @@ body {
 
 .about-content ul li {
   padding: 2rem 1.3rem;
-  border: 1px solid  #15dcf6;
+  background: rgba(255,255,255,.05);
   margin: 25px 0;
 }
 
@@ -249,10 +262,6 @@ body {
   margin: 1rem 0;
 }
 
-
-#portfolio {
-  background: rgb(9,42,51);
-}
 #portfolio #portfolio-content > * {
   margin: 1.5rem 0;
 }
@@ -304,7 +313,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 0 1rem;
-  border: 1px solid #15dcf6;
+  background: rgba(255,255,255,.05);
 }
 #timeline-content li:nth-child(even) {
   margin-top: 280px;
@@ -328,9 +337,25 @@ body {
 
 
 #faq {
-  background: rgb(9,42,51);
+  position: relative;
 }
+#faq:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/bg4.jpg) no-repeat;
+  background-size: cover;
+  z-index: -8;
 
+}
+#faq > div {
+  background: rgba(6,29,35,.7);
+  padding: 5rem 1.3rem;
+}
 #faq h2 {
   text-align: center;
   font-size: var(--title-text);
@@ -453,8 +478,25 @@ body {
 
 
 #footer {
-  background: rgba(6,29,35,0.861);
+  position: relative;
 }
+#footer:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/bg5.jpg) no-repeat;
+  background-size: cover;
+  z-index: -8;
+}
+#footer > div {
+  background: rgba(6,29,35,.9);
+  padding: 5rem 1.3rem 1.3rem 1.3rem;
+}
+
 #footer #footer-top{
   display: flex;
   justify-content: center;
@@ -472,9 +514,6 @@ body {
 }
 
 
-#footer {
-  padding-top: 5rem;
-}
 #footer #footer-content {
   display: grid;
   gap: 25px;
@@ -522,8 +561,6 @@ body {
 
 /* mobile */
 @media (max-width: 567px) {
-  
-  
   #header #showcase,#portfolio,#contact{
     width: 100%;
     padding-top: 4rem
@@ -558,10 +595,8 @@ body {
   
   
   
-  
-  
-#footer #footer-content {
-  grid-template-columns: 1fr;
-}
+  #footer #footer-content {
+    grid-template-columns: 1fr;
+  }
 
 }
