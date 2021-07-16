@@ -38,6 +38,16 @@ p,a{
   color: var(--paraghraph-color);
   font-family: 'Lato', sans-serif;
 }
+.cta-btn,.submit-btn {
+  padding: 1rem 1.5rem ;
+  border: none;
+  font-weight: 600;
+  color: #000;
+  background: #ed8732;
+  text-transform: uppercase;
+  font-size: var(--detail-text);
+}
+
 body {
   background: rgb(9,42,51);
 }
@@ -50,6 +60,7 @@ body {
 
 #navbar > div,
 #reason > div,
+#portfolio > div,
 #about > div,
 #timeline > div,
 #contact > div{
@@ -74,20 +85,15 @@ body {
 
 
 #navbar .menu {
-  display: none;
-  position: absolute;
-  width: 80vw;
-  top: 65px;
-  left: 50%;
-  transform: translatex(-50%);
-  background: #061d23;
-  
+ display: flex;
 }
+
 #navbar .menu > div {
   padding: 1rem;
 }
 #navbar .menu a {
   text-decoration: none;
+  color: rgb(6,29,35);
 }
 
 
@@ -95,7 +101,7 @@ body {
   height: 25px;
   width: 30px;
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -136,7 +142,7 @@ body {
 }
 #header > div {
   background: linear-gradient(rgba(6,29,35,.7),rgb(6,29,35));
-  padding: 5rem 1.3rem;
+  padding: 5rem 10vw;
 }
 #header #showcase img {
   width: 250px;
@@ -154,19 +160,8 @@ body {
  font-weight: 300 ;
 }
 #showcase button {
-  background: none;
   color: rgb(6,29,35);
   border: none;
-  background: var(--paraghraph-color);
-}
-.cta-btn,.submit-btn {
-  padding: 1rem 1.5rem ;
-  border: none;
-  font-weight: 600;
-  color: #000;
-  background: var(--paraghraph-color);
-  text-transform: uppercase;
-  font-size: var(--detail-text);
 }
 
 #reason {
@@ -223,7 +218,7 @@ body {
 
 #about {
   background: rgb(6,29,35);
-  clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 2%);
+  clip-path: polygon(100% 0, 100% 98%, 50% 100%, 0 98%, 0 2%);
 }
 #about .about-content {
   text-align: center;
@@ -295,6 +290,7 @@ body {
 
 
 #timeline {
+  clip-path: polygon(50% 0%, 100% 2%, 100% 100%, 0 100%, 0 2%);
   background: rgb(6,29,35);
 }
 #timeline h2 {
@@ -456,7 +452,7 @@ body {
 }
  #fields form > div textarea {
   width: 100%;
-  height: 120px;
+  height: 300px;
   padding: .5rem;
   border: 1px solid #fff;
   background: none;
@@ -465,9 +461,8 @@ body {
  }
 
 #fields form .submit-btn {
-  margin-top: calc(1rem + 68px);
+  margin-top: calc(1rem + 250px);
   width: 100%;
-  background: #fff;
 }
 
 
@@ -493,7 +488,7 @@ body {
   z-index: -8;
 }
 #footer > div {
-  background: rgba(6,29,35,.9);
+  background: linear-gradient(rgba(6,29,35,.5),rgb(6,29,35));
   padding: 5rem 1.3rem 1.3rem 1.3rem;
 }
 
@@ -508,15 +503,19 @@ body {
 }
 #footer-top ul {
   display: flex;
+  margin: 4rem 0;
 }
 #footer-top ul li {
   margin: 0 .5rem;
+}
+#footer-top ul a i {
+  font-size: var(--title-text);
 }
 
 
 #footer #footer-content {
   display: grid;
-  gap: 25px;
+  gap: 30px;
   grid-template-columns: repeat(3,1fr);
 }
 #footer-content > div{
@@ -529,14 +528,15 @@ body {
 #footer-content form button {
   padding: 0 1rem;
   border: none;
-  background: var(--paraghraph-text);
+  background: #ed8732;
+  font-weight: bold;
 }
 #footer-content form > *{
   height: 100%;
 }
 #footer-content > div p{
   margin-bottom: 1rem;
-  font-size: var(--paraghraph-text);
+  font-size: var(--detail-text);
 }
 #footer-content > div h4{
   margin-bottom: 1rem;
@@ -559,8 +559,36 @@ body {
 
 /* break points */
 
+/* tablet */
+@media (max-width: 768px) {
+  
+  #navbar .menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    position: absolute;
+    width: 80vw;
+    top: 75px;
+    left: 50%;
+    z-index: 999;
+    transform: translatex(-50%);
+    background: #fff;
+  }
+  #navbar .display-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  #navbar .hamburger-button {
+    display: flex;
+  }
+  
+
+}
+
+
 /* mobile */
-@media (max-width: 567px) {
+@media (max-width: 568px) {
   #header #showcase,#portfolio,#contact{
     width: 100%;
     padding-top: 4rem
@@ -569,6 +597,14 @@ body {
   #navbar > div,#reason > div,#about > div,#portfolio > div,#timeline > div,#faq > div,#contact > div {
     width: 100%;
   }
+  
+
+  
+  
+  #navbar .menu {
+    width: 100vw;
+  }
+
   #reason .reason-text {
     display: block;
   }
@@ -580,8 +616,6 @@ body {
     transform: translatey(0);
   }
     
-    
-  
   
   #timeline #timeline-content {
     grid-template-columns: 1fr;
