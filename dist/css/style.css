@@ -58,7 +58,7 @@ body {
 
 
 
-#navbar > div,
+#nav-bar > div,
 #reason > div,
 #portfolio > div,
 #about > div,
@@ -72,10 +72,14 @@ body {
   height: 50px;
   width: 50px;
 }
-#navbar {
+#nav-bar {
  background: #fff;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
 }
-#navbar > div {
+#nav-bar > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,20 +88,20 @@ body {
 }
 
 
-#navbar .menu {
+#nav-bar .menu {
  display: flex;
 }
 
-#navbar .menu > div {
+#nav-bar .menu > div {
   padding: 1rem;
 }
-#navbar .menu a {
+#nav-bar .menu a {
   text-decoration: none;
   color: rgb(6,29,35);
 }
 
 
-#navbar .hamburger-button {
+#nav-bar .hamburger-button {
   height: 25px;
   width: 30px;
   position: relative;
@@ -106,14 +110,14 @@ body {
   justify-content: space-between;
 }
 
-#navbar .hamburger-button input[type="checkbox"]{
+#nav-bar .hamburger-button input[type="checkbox"]{
   display: block;
   width: 100%;
   height: 100%;
   opacity: 0;
   position: absolute;
 }
-#navbar .hamburger-button > div {
+#nav-bar .hamburger-button > div {
   height: 3px;
   width: 100%;
   border-radius: 10px;
@@ -289,7 +293,7 @@ body {
 }
 
 
-#video {
+#video-section {
   width: 100%;
   height: 350px;
   display: flex;
@@ -572,7 +576,7 @@ body {
 /* tablet */
 @media (max-width: 768px) {
   
-  #navbar .menu {
+  #nav-bar .menu {
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -585,11 +589,11 @@ body {
     transform: translatex(-50%);
     background: #fff;
   }
-  #navbar .display-menu {
+  #nav-bar .display-menu {
     opacity: 1;
     visibility: visible;
   }
-  #navbar .hamburger-button {
+  #nav-bar .hamburger-button {
     display: flex;
   }
   
@@ -604,14 +608,14 @@ body {
     padding-top: 4rem
   }
   
-  #navbar > div,#reason > div,#about > div,#portfolio > div,#timeline > div,#faq > div,#contact > div {
+  #nav-bar > div,#reason > div,#about > div,#portfolio > div,#timeline > div,#faq > div,#contact > div {
     width: 100%;
   }
   
 
   
   
-  #navbar .menu {
+  #nav-bar .menu {
     width: 100vw;
   }
 
@@ -627,7 +631,7 @@ body {
   }
     
     
-  #video video {
+  #video-section video {
     width: 100%;
   }
     

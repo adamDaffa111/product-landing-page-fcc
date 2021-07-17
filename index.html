@@ -14,7 +14,7 @@
 <body>
   <div class="container">
       <header id="header">
-      <nav id="navbar">
+      <nav id="nav-bar">
         <div>
           <div class="logo">
             <a href="#"><img src="dist/img/logo.png" alt="logo" /></a>
@@ -147,9 +147,10 @@
 
       </div>
     </section>
-    <section id="video">
+    <section id="video-section">
       <div>
-        <video width="320" height="240" controls>
+        
+        <video width="320" height="240" id="video" controls>
           <source src="dist/video/preview.mp4" type="video/mp4">
           <source src="dist/video/preview.ogg" type="video/ogg">
           Your browser does not support the video tag.
@@ -274,12 +275,12 @@
             </div>
             <div>
               <label for="email">email</label>
-              <input type="email" placeholder="masukan email" value="" id="email" />
+              <input type="email" placeholder="masukan email" name="email" value="" id="email" />
             </div>
             <div>
               <textarea placeholder="ketik pesan anda"></textarea>
             </div>
-            <button id="submit" class="submit-btn"> kirim pesan </button>
+            <input type="submit" class="submit-btn" id="submit" value="kirim pesan">
           </form>
         </div>
         <div class="embed-map" data-aos="fade-up">
@@ -364,7 +365,7 @@
     
     
     
-    /* navbar */
+    /* nav-bar */
     const menu = document.querySelector('.menu');
     const hamburgerMenu = document.querySelector('.hamburger-button');
     hamburgerMenu.addEventListener('click',() => {
