@@ -289,6 +289,16 @@ body {
 }
 
 
+#video {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 #timeline {
   clip-path: polygon(50% 0%, 100% 2%, 100% 100%, 0 100%, 0 2%);
   background: rgb(6,29,35);
@@ -614,6 +624,11 @@ body {
   
   .boxes .box:nth-child(even) {
     transform: translatey(0);
+  }
+    
+    
+  #video video {
+    width: 100%;
   }
     
   
